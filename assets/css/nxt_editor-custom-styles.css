@@ -1,0 +1,52 @@
+/* #region Colors */
+:root {
+  --color-text: var(--wp--preset--color--custom-text-color, #000);
+  --color-bg: var(--wp--preset--color--custom-background-color, #fff);
+  --primary: var(--wp--preset--color--custom-primary, #d10707);
+  --secondary: var(--wp--preset--color--custom-secondary, #2ea3f2);
+}
+
+/* #endregion Colors */
+/* #region Font Sizes */
+/* #endregion Font Sizes */
+/* #region Masks */
+.wp-block-button.is-style-ripped-paper-button .wp-block-button__link {
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+/* #endregion Masks */
+/* #region Button Styles */
+.wp-block-button__link {
+  border-radius: 50px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+.wp-block-button.is-style-outline-button .wp-block-button__link {
+  background-color: transparent !important;
+  border: 2px solid currentColor;
+  color: var(--wp--preset--color--primary, var(--primary));
+}
+.wp-block-button.is-style-square-button .wp-block-button__link {
+  border-radius: 0;
+}
+.wp-block-button.is-style-minimal-button .wp-block-button__link {
+  border-radius: 4px;
+}
+.wp-block-button.is-style-ripped-paper-button .wp-block-button__link {
+  border-radius: 0;
+  mask-image: url("../img/ripped-paper-mask.svg");
+  mask-repeat: repeat-x;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+/* #endregion Button Styles *//*# sourceMappingURL=nxt_editor-custom-styles.css.map */

@@ -1,0 +1,71 @@
+/* #region Colors */
+:root {
+	--color-text: var(--wp--preset--color--custom-text-color, #000);
+	--color-bg: var(--wp--preset--color--custom-background-color, #fff);
+	--primary: var(--wp--preset--color--custom-primary, #d10707);
+	--secondary: var(--wp--preset--color--custom-secondary, #2ea3f2);
+}
+/* #endregion Colors */
+
+/* #region Font Sizes */
+$small: var(--wp--preset--font-size--small, 0.875rem);
+$normal: var(--wp--preset--font-size--normal, 1rem);
+$medium: var(--wp--preset--font-size--medium, clamp(1.125rem, calc(.2857vw + 1.0536rem), 1.25rem));
+$large: var(--wp--preset--font-size--large, clamp(1.25rem, calc(.5714vw + 1.1071rem), 1.5rem));
+$larger: var(--wp--preset--font-size--larger, clamp(1.25rem, calc(1.1429vw + .9643rem), 1.75rem));
+$xxl: var(--wp--preset--font-size--xxl, clamp(1.375rem, calc(1.4286vw + 1.0179rem), 2rem));
+$ultra: var(--wp--preset--font-size--ultra, clamp(1.375rem, calc(2vw + .875rem), 2.25rem));
+/* #endregion Font Sizes */
+
+/* #region Masks */
+%mask {
+	background-color: currentColor;
+	mask-repeat: no-repeat;
+	mask-position: center;
+	mask-size: contain;
+}
+/* #endregion Masks */
+
+/* #region Button Styles */
+.wp-block-button {
+	&__link {
+		// Default pill-shaped buttons
+		border-radius: 50px;
+		border: 2px solid transparent;
+		transition: all 0.3s ease;
+		text-decoration: none;
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		font-weight: 600;
+		text-align: center;
+		cursor: pointer;
+	}
+	
+	// Outline style - border only
+	&.is-style-outline-button .wp-block-button__link {
+		background-color: transparent !important;
+		border: 2px solid currentColor;
+		color: var(--wp--preset--color--primary, var(--primary));
+	}
+	
+	// Square corners - no border radius
+	&.is-style-square-button .wp-block-button__link {
+		border-radius: 0;
+	}
+	
+	// Minimal border radius (4px)
+	&.is-style-minimal-button .wp-block-button__link {
+		border-radius: 4px;
+	}
+	
+	// Ripped paper style using inverted SVG mask
+	&.is-style-ripped-paper-button .wp-block-button__link {
+		@extend %mask;
+		border-radius: 0;
+		mask-image: url('../img/ripped-paper-mask.svg');
+		mask-repeat: repeat-x;
+		padding: 1rem 2rem;
+		position: relative;
+	}
+}
+/* #endregion Button Styles */

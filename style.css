@@ -1,0 +1,127 @@
+@charset "UTF-8";
+/*
+Theme Name: Link Me Up
+Theme URI: https://nextab.de
+Author: nexTab – Oliver Gehrmann
+Author URI: 
+Description: Basic Gutenberg based WordPress theme to list links to your favorite sites on the net
+Requires at least: 6.0
+Tested up to: 6.8.2
+Requires PHP: 8.1
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: link-me-up
+Tags: 
+*/
+/* #region Colors */
+:root {
+  --color-text: var(--wp--preset--color--custom-text-color, #191616);
+  --color-bg: var(--wp--preset--color--custom-background-color, #fff);
+  --primary: var(--wp--preset--color--custom-primary, #d10707);
+  --secondary: var(--wp--preset--color--custom-secondary, #2ea3f2);
+}
+
+/* #endregion Colors */
+/* #region Font Sizes */
+/* #endregion Font Sizes */
+/* #region Masks */
+.wp-block-button.is-style-ripped-paper-button .wp-block-button__link {
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+/* #endregion Masks */
+/* #region Placeholder Mixin */
+/* #endregion Placeholder Mixin */
+/* #region Widths */
+/* #endregion Widths */
+/* #region Containers */
+/* #endregion Containers */
+/* #region Normalization */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth !important;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  color: var(--color-text);
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+.fullheight {
+  min-height: calc(100vh - var(--wp-admin--admin-bar--height, 0px)) !important;
+}
+
+.fullwidth {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* #region Overwrite Gutenberg Special Crap */
+:where(.wp-site-blocks) > * {
+  margin-block-start: 0;
+}
+
+:where(.wp-block-cover-image.is-light:not(.has-text-color)), :where(.wp-block-cover.is-light:not(.has-text-color)) {
+  color: var(--color-text);
+}
+
+.align_flex_start.is-layout-flex {
+  align-items: flex-start;
+}
+
+.wp-block-buttons.is-content-justification-center.is-layout-flex {
+  justify-content: center;
+  width: 100%;
+}
+
+/* #endregion Overwrite Gutenberg Special Crap */
+/* #endregion Normalization */
+/* #region Typography */
+h1, h2, h4, h5, h6 {
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+/* #endregion Typography */
+/* #region Button Styles */
+.wp-block-button__link {
+  border-radius: 50px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+.wp-block-button.is-style-outline-button .wp-block-button__link {
+  background-color: transparent !important;
+  border: 2px solid currentColor;
+  color: var(--wp--preset--color--primary, var(--primary));
+}
+.wp-block-button.is-style-square-button .wp-block-button__link {
+  border-radius: 0;
+}
+.wp-block-button.is-style-minimal-button .wp-block-button__link {
+  border-radius: 4px;
+}
+.wp-block-button.is-style-ripped-paper-button .wp-block-button__link {
+  border-radius: 0;
+  mask-image: url("assets/img/ripped-paper-mask.svg");
+  mask-repeat: repeat-x;
+  position: relative;
+  padding: 1rem 2rem;
+}
+
+/* #endregion Button Styles *//*# sourceMappingURL=style.css.map */

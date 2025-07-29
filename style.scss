@@ -1,0 +1,171 @@
+/*
+Theme Name: Link Me Up
+Theme URI: https://nextab.de
+Author: nexTab – Oliver Gehrmann
+Author URI: 
+Description: Basic Gutenberg based WordPress theme to list links to your favorite sites on the net
+Requires at least: 6.0
+Tested up to: 6.8.2
+Requires PHP: 8.1
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: link-me-up
+Tags: 
+*/
+
+/* #region Colors */
+:root {
+	--color-text: var(--wp--preset--color--custom-text-color, #191616);
+	--color-bg: var(--wp--preset--color--custom-background-color, #fff);
+	--primary: var(--wp--preset--color--custom-primary, #d10707);
+	--secondary: var(--wp--preset--color--custom-secondary, #2ea3f2);
+}
+/* #endregion Colors */
+
+/* #region Font Sizes */
+$small: var(--wp--preset--font-size--small, 0.875rem);
+$normal: var(--wp--preset--font-size--normal, 1rem);
+$medium: var(--wp--preset--font-size--medium, clamp(1.125rem, calc(.2857vw + 1.0536rem), 1.25rem));
+$large: var(--wp--preset--font-size--large, clamp(1.25rem, calc(.5714vw + 1.1071rem), 1.5rem));
+$larger: var(--wp--preset--font-size--larger, clamp(1.25rem, calc(1.1429vw + .9643rem), 1.75rem));
+$xxl: var(--wp--preset--font-size--xxl, clamp(1.375rem, calc(1.4286vw + 1.0179rem), 2rem));
+$ultra: var(--wp--preset--font-size--ultra, clamp(1.375rem, calc(2vw + .875rem), 2.25rem));
+/* #endregion Font Sizes */
+
+/* #region Masks */
+%mask {
+	background-color: currentColor;
+	mask-repeat: no-repeat;
+	mask-position: center;
+	mask-size: contain;
+}
+/* #endregion Masks */
+
+/* #region Placeholder Mixin */
+@mixin placeholder ($color: var(--color-text), $opacity: 0.8) {
+	&::-webkit-input-placeholder { // Chrome/Opera/Safari
+		color: $color;
+		opacity: $opacity;
+	}
+	&::-moz-placeholder { // Firefox 19+
+		color: $color;
+		opacity: $opacity;
+	}
+	&:-ms-input-placeholder { // IE 10+
+		color: $color;
+		opacity: $opacity;
+	}
+	&:-moz-placeholder { // Firefox 18-
+		color: $color;
+		opacity: $opacity;
+	}
+}
+/* #endregion Placeholder Mixin */
+
+/* #region Widths */
+$regular: var(--wp--style--global--content-size, 700px);
+$wide: var(--wp--style--global--wide-size, 1260px);
+$narrow: var(--wp--style--global--narrow-size, 600px);
+/* #endregion Widths */
+
+/* #region Containers */
+$container-width: 90%;
+$container-padding-bottom: 4rem;
+$container-padding-top: 4rem;
+/* #endregion Containers */
+
+/* #region Normalization */
+* {
+	box-sizing: border-box;
+}
+html {
+	font-size: 16px;
+	scroll-behavior: smooth !important;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+	color: var(--color-text);
+	font-size: 100%;
+	line-height: 1.5;
+}
+%container {
+	width: $container-width;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $wide;
+}
+.fullheight {
+	min-height: calc(100vh - var(--wp-admin--admin-bar--height, 0px)) !important;
+}
+.fullwidth {
+	max-width: 100% !important;
+	width: 100% !important;
+}
+/* #region Overwrite Gutenberg Special Crap */
+:where(.wp-site-blocks) > * {
+	margin-block-start: 0;
+}
+:where(.wp-block-cover-image.is-light:not(.has-text-color)), :where(.wp-block-cover.is-light:not(.has-text-color)) {
+	color: var(--color-text);
+}
+.align_flex_start.is-layout-flex {
+	align-items: flex-start;
+}
+.wp-block-buttons.is-content-justification-center.is-layout-flex {
+	justify-content: center;
+	width: 100%;
+}
+/* #endregion Overwrite Gutenberg Special Crap */
+/* #endregion Normalization */
+
+/* #region Typography */
+h1, h2, h4, h5, h6 {
+	line-height: 1.2;
+	text-wrap: balance;
+}
+/* #endregion Typography */
+
+/* #region Button Styles */
+.wp-block-button {
+	&__link {
+		// Default pill-shaped buttons
+		border-radius: 50px;
+		border: 2px solid transparent;
+		transition: all 0.3s ease;
+		text-decoration: none;
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		font-weight: 600;
+		text-align: center;
+		cursor: pointer;
+	}
+	
+	// Outline style - border only
+	&.is-style-outline-button .wp-block-button__link {
+		background-color: transparent !important;
+		border: 2px solid currentColor;
+		color: var(--wp--preset--color--primary, var(--primary));
+	}
+	
+	// Square corners - no border radius
+	&.is-style-square-button .wp-block-button__link {
+		border-radius: 0;
+	}
+	
+	// Minimal border radius (4px)
+	&.is-style-minimal-button .wp-block-button__link {
+		border-radius: 4px;
+	}
+	
+	// Ripped paper style using inverted SVG mask
+	&.is-style-ripped-paper-button .wp-block-button__link {
+		@extend %mask;
+		border-radius: 0;
+		mask-image: url('assets/img/ripped-paper-mask.svg');
+		mask-repeat: repeat-x;
+		position: relative;
+		padding: 1rem 2rem;
+	}
+}
+/* #endregion Button Styles */

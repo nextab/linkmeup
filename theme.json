@@ -1,0 +1,151 @@
+{
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"customDuotone": false,
+			"customGradient": false,
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+			"palette": [
+				{
+					"color": "#000000",
+					"name": "Black",
+					"slug": "black"
+				},
+				{
+					"color": "#ffffff",
+					"name": "White",
+					"slug": "white"
+				},
+				{
+					"color": "#0060AC",
+					"name": "Blue",
+					"slug": "blue"
+				},
+				{
+					"color": "#606060",
+					"name": "Grey",
+					"slug": "grey"
+				},
+				{
+					"color": "#f0f0f7",
+					"name": "Light Grey",
+					"slug": "light-grey"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "700px",
+			"wideSize": "1260px"
+		},
+		"spacing": {
+			"units": [
+				"%",
+				"px",
+				"em",
+				"rem",
+				"vh",
+				"vw"
+			]
+		},
+		"typography": {
+			"customFontSize": true,
+			"defaultFontSizes": false,
+			"fontFamilies": [
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Source Sans Pro",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/source-sans-3-v15-latin-regular.woff2"
+							]
+						}
+					],
+					"fontFamily": "'Source Sans Pro', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+					"name": "Source Sans Pro",
+					"slug": "source-sans-pro"
+				}
+			],
+			"fontSizes": [
+				{
+					"name": "Small",
+					"size": "14px",
+					"slug": "small"
+				},
+				{
+					"name": "Normal",
+					"size": "1rem",
+					"slug": "normal"
+				},
+				{
+					"name": "Medium",
+					"size": "clamp(1.125rem, calc(.2857vw + 1.0536rem), 1.25rem)",
+					"slug": "medium"
+				},
+				{
+					"name": "Large",
+					"size": "clamp(1.25rem, calc(.5714vw + 1.1071rem), 1.5rem)",
+					"slug": "large"
+				},
+				{
+					"name": "Larger",
+					"size": "clamp(1.25rem, calc(1.1429vw + .9643rem), 1.75rem)",
+					"slug": "larger"
+				},
+				{
+					"name": "Extra Large",
+					"size": "clamp(1.375rem, calc(1.4286vw + 1.0179rem), 2rem)",
+					"slug": "xxl"
+				},
+				{
+					"name": "Ultra Large",
+					"size": "clamp(1.375rem, calc(2vw + .875rem), 2.25rem)",
+					"slug": "ultra"
+				}
+			]
+		},
+		"useRootPaddingAwareAlignments": true
+	},
+	"styles": {
+		"elements": {
+			"h1": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--larger)",
+					"fontWeight": "600"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--larger)",
+					"fontWeight": "600"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--medium)",
+					"fontWeight": "600"
+				}
+			}
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--source-sans-pro)",
+			"fontSize": "var(--wp--preset--font-size--normal)",
+			"fontWeight": "400"
+		}
+	},
+	"templateParts": [
+		{
+			"area": "header",
+			"name": "header"
+		},
+		{
+			"area": "footer",
+			"name": "footer"
+		}
+	],
+	"version": 3,
+	"$schema": "https://schemas.wp.org/wp/6.8/theme.json"
+}
